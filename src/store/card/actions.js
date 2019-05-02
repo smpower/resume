@@ -1,11 +1,16 @@
 import { SET_CARD_VISIBLE, SET_CARD_UNVISIBLE } from './actionTypes';
 
-export const visible = (target) => ({
-  type: SET_CARD_VISIBLE,
-  target
-});
+export const visible = (target) => {
+  return {
+    type: SET_CARD_VISIBLE,
+    target: target,
+    [target]: true
+  };
+};
 
-export const unvisible = () => ({
-  type: SET_CARD_UNVISIBLE
+export const unvisible = (target) => ({
+  type: SET_CARD_UNVISIBLE,
+  target: target,
+  [target]: false
 });
 

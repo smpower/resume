@@ -1,6 +1,5 @@
 import { SET_CARD_VISIBLE, SET_CARD_UNVISIBLE } from './actionTypes';
 
-const test = 'test'
 const cardState = {
   isHomeVisible: true,
   isResumeVisible: false,
@@ -14,11 +13,12 @@ export default (state = cardState, action) => {
     case SET_CARD_VISIBLE:
       return {
         ...state,
-	...action.target
+	[action.target]: action[action.target]
       };
     case SET_CARD_UNVISIBLE:
       return {
         ...state,
+	[action.target]: action[action.target]
       };
     default: 
       return state;

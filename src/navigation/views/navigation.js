@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { cardActions } from '../../store/card/';
+import store from '../../store/';
+import { actions as cardActions } from '../../store/card/';
 
 import './navigation.scss';
 
@@ -43,36 +44,101 @@ class Navigation extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.getOwnState = this.getOwnState.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.getActivedButton = this.getActivedButton.bind(this);
 
     this.state = Object.assign({}, {
       // default params
-    });
+    }, this.getOwnState());
   }
 
   onChange() {
+    this.setState(this.getOwnState());
   }
 
   getOwnState() {
+    return {
+      card: store.getState().card
+    };
+  }
+
+  handleClick(visibleTarget) {
+    const _this = this;
+
+    return function(event) {
+      const { card } = _this.state;
+
+      // 避免重复点击[主页]按钮
+      if (visibleTarget === 'isHomeVisible') {
+	for (const key in card) {
+	  if (card[key] && key !== 'isHomeVisible') {
+	    store.dispatch(cardActions.unvisible(key));
+	  }
+	}
+
+	if (card[visibleTarget]) return;
+	store.dispatch(cardActions.visible(visibleTarget));
+      }
+
+      // 点击其他按钮
+      else {
+	for (const key in card) {
+	  if (card[key]) {
+	    if (key !== 'isHomeVisible') {
+	      store.dispatch(cardActions.unvisible(key));
+	    }
+	  }
+	}
+	store.dispatch(cardActions.visible(visibleTarget));
+      }
+    }
+  }
+
+  /**
+   * @des 获取激活的按钮
+   * @return [String] - 当前激活的按钮
+  **/
+  getActivedButton() {
+    const { card } = this.state;
+    for (const key in card) {
+      if (card[key] && key !== 'isHomeVisible') return key;
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (typeof this.state.unsubscribe !== 'undefined') return true;
+    else return false;
   }
 
   componentDidMount() {
     this.setState({
-      // unsubscribe: this.context.store.subscribe(this.onChange)
+      unsubscribe: store.subscribe(this.onChange)
     });
   }
 
   componentWillUnmount() {
-    // this.state.unsubscribe(this.onChange);
+    this.state.unsubscribe(this.onChange);
   }
 
   render() {
+    let activedButton = this.getActivedButton();
+    if (typeof activedButton === 'undefined') activedButton = 'isHomeVisible';
+
     return (
       <div className="navigation">
 	<ul>
 	  {
 	    menu.map((menuItem, menuIndex) => {
 	      return (
-		<li className="menu" key={menuIndex}>
+		<li 
+		  className={activedButton === menuItem.target ? (
+		    'menu active'
+		  ) : (
+		    'menu'
+		  )} 
+		  key={menuIndex}
+		  onClick={this.handleClick(menuItem.target)}
+		>
 		  <span className="text">{menuItem.translation}</span>
 		</li>
 	      );

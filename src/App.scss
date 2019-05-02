@@ -6,16 +6,24 @@
   justify-content: center;
   align-items: center;
   .main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 470px;
     max-width: 470px;
     height: 570px;
     max-height: 570px;
-    background: red;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    left: 0;
     z-index: 10;
+    transition: left .7s ease-out;
+    &.active {
+      left: -242px;
+      z-index: 10;
+    }
   }
 }
 

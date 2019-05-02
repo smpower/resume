@@ -1,7 +1,7 @@
 .navigation {
   position: absolute;
   top: 0;
-  left: -175px;
+  left: -174px;
   width: 160px;
   max-width: 160px;
   li {
@@ -13,6 +13,9 @@
     cursor: pointer;
     transition: background 1s;
     &:hover {
+      background: #021533;
+    }
+    &.active {
       background: #021533;
     }
     .text {
