@@ -1,0 +1,26 @@
+.navigation {
+  position: absolute;
+  top: 0;
+  left: -175px;
+  width: 160px;
+  max-width: 160px;
+  li {
+    background: #08aeac;
+    position: relative;
+    height: 37px;
+    line-height: 37px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 1s;
+    &:hover {
+      background: #021533;
+    }
+    .text {
+      display: inline-block;
+      font-size: 14px;
+      color: #fff;
+      position: absolute;
+      left: 14px;
+    }
+  }
+}

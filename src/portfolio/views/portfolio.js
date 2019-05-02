@@ -5,7 +5,7 @@ import './portfolio.scss';
 class Portfolio extends Component {
   render() {
     return (
-      <div className="portfolio">
+      <div className="portfolio hidden">
         portfolio content
       </div>
     );

@@ -5,7 +5,7 @@ import './skill.scss';
 class Skill extends Component {
   render() {
     return (
-      <div className="skill">
+      <div className="skill hidden">
         skill content
       </div>
     );
