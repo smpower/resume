@@ -1,0 +1,3 @@
+export const SET_CARD_VISIBLE = 'CARD/VISIBLE';
+export const SET_CARD_UNVISIBLE = 'CARD/UNVISIBLE';
+
