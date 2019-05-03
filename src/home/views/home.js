@@ -6,7 +6,9 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-	home content
+	<span className="line"></span>
+	<div className="content">
+	</div>
       </div>
     );
   }

@@ -9,7 +9,9 @@ class Contact extends Component {
 
     return (
       <div className={card.isContactVisible ? "contact active" : "contact"}>
-	contact content
+	<span className="line"></span>
+	<div className="content">
+	</div>
       </div>
     );
   }

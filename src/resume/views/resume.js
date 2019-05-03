@@ -9,7 +9,8 @@ class Resume extends Component {
 
     return (
       <div className={card.isResumeVisible ? "resume active" : "resume"}>
-	resume content
+	<span className="line"></span>
+	<div className="content"></div>
       </div>
     );
   }

@@ -9,7 +9,8 @@ class Portfolio extends Component {
 
     return (
       <div className={card.isPortfolioVisible ? "portfolio active" : "portfolio"}>
-	portfolio content
+	<span className="line"></span>
+	<div className="content"></div>
       </div>
     );
   }
