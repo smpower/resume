@@ -69,6 +69,7 @@ class Navigation extends Component {
       const { card } = _this.state;
 
       // 避免重复点击[主页]按钮
+      store.dispatch(cardActions.visible(visibleTarget));
       if (visibleTarget === 'isHomeVisible') {
 	for (const key in card) {
 	  if (card[key] && key !== 'isHomeVisible') {
