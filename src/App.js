@@ -7,6 +7,8 @@ import { view as Skill } from './skill/';
 import { view as Portfolio } from './portfolio/';
 import { view as Contact } from './contact/';
 
+import backgroundImage from './images/background.jpg';
+
 import './App.scss';
 
 class App extends Component {
@@ -19,6 +21,10 @@ class App extends Component {
 
     this.state = Object.assign({}, {
       // default params
+      appStyle: {
+	background: `url(${backgroundImage}) no-repeat center center`,
+	backgroundSize: 'center center'
+      }
     }, this.getOwnState());
   }
 
@@ -66,7 +72,7 @@ class App extends Component {
     const shouldActived = this.shouldActived();
 
     return (
-      <div className="App">
+      <div className="App" style={this.state.appStyle}>
 	<div className={typeof shouldActived === 'undefined' ? (
 	  "main"
 	) : (
