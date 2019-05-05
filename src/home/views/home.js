@@ -46,6 +46,7 @@ class Home extends Component {
   render() {
     const { cardBackground, cardBackground2 } = store.getState().style;
     const { mailTo } = this.state;
+
     return (
       <div className="home">
 	<span className="line"></span>

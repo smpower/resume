@@ -26,6 +26,87 @@
     position: relative;
     overflow: hidden;
     height: 100%;
+    .header {
+      h2 {
+        font-size: 22px;
+	font-weight: bold;
+	color: #021533;
+	padding-bottom: 15px;
+      }
+      hr {
+	height: 2px;
+      }
+    }
+    .download-resume {
+      background: #08aeac;
+      color: #fff;
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0 30px 0;
+      a {
+        color: #fff;
+	font-size: 16px;
+      }
+    }
+    .education {
+      h3 {
+        padding-left: 15px;
+	border-left: 4px solid #08aeac;
+	color: #08aeac;
+	font-weight: bold;
+	font-size: 20px;
+	height: 20px;
+	line-height: 20px;
+	padding-bottom: 1px;
+	margin-bottom: 10px;
+	i {
+	  font-size: 20px;
+	  color: #08aeac;
+	  margin-right: 5px;
+	}
+      }
+      .education-box {
+	border: 1px solid #ccc;
+	padding: 15px;
+	h4 {
+	  font-size: 18px;
+	  font-weight: bold;
+	  color: #555;
+	}
+	.intro {
+	  font-style: italic;
+	  font-size: 12px;
+	  color: #555;
+	  display: inline-block;
+	  padding-bottom: 3px;
+	}
+	.education-intro {
+	  padding-top: 5px;
+	  li {
+	    display: flex;
+	    justify-content: flex-start;
+	    align-items: flex-start;
+	    span {
+	      font-size: 12px;
+	      display: inline-block;
+	      height: 100%;
+	    }
+	    .date {
+	      display: inline-block;
+	      height: 22px;
+	      line-height: 22px;
+	      padding-right: 10px;
+	    }
+	    .text {
+	    }
+	  }
+	}
+      }
+    }
   }
 }
 
