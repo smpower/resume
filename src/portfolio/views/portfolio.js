@@ -6,11 +6,13 @@ import './portfolio.scss';
 class Portfolio extends Component {
   render() {
     const { card } = store.getState();
+    const { cardBackground } = store.getState().style;
 
     return (
       <div className={card.isPortfolioVisible ? "portfolio active" : "portfolio"}>
 	<span className="line"></span>
-	<div className="content"></div>
+	<div className="content" style={cardBackground}>
+	</div>
       </div>
     );
   }

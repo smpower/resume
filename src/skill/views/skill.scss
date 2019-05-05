@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: green;
+  background: #f4f4f4;
   opacity: 0;
   transition: left .7s ease-out, opacity .7s ease-out;
   &.active {
