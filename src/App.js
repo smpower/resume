@@ -6,6 +6,7 @@ import { view as Resume } from './resume/';
 import { view as Skill } from './skill/';
 import { view as Portfolio } from './portfolio/';
 import { view as Contact } from './contact/';
+import { view as Modal } from './modal/';
 
 import './App.scss';
 
@@ -80,6 +81,7 @@ class App extends Component {
 	  <Contact />
 	  <Home />
 	</div>
+	<Modal />
       </div>
     );
   }
