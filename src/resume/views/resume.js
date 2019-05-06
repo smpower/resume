@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import store from '../../store/';
 
+import resumeFile from './王若非的简历_前端工程师.pdf';
 import './resume.scss';
 
 class Resume extends Component {
@@ -17,9 +18,23 @@ class Resume extends Component {
 	    <hr />
 	  </div>
 	  <div className="download-resume">
-	    <a href="#" alt="download resume">下载我的简历</a>
+	    <a href={resumeFile} alt="download resume">下载我的简历</a>
 	  </div>
-	  <div className="education">
+	  <div className="card-part self-intro">
+	    <h3>
+	      <i className="icon-self-description fa fa-user"></i>
+	      个人描述/评价
+	    </h3>
+	    <div className="self-description-box">
+	      <p>
+		本人本科学历，有两年前端开发经验。本人技术栈主要在前端方向，后端略有涉猎，包括：HTML5、CSS3、ES6、React、React-Router、Redux、Webpack、Less、Bootstrap、Git/SVN、Docker(Ubuntu)、Express、MySQL。
+	      </p>
+	      <p>
+	        工作中，对自己要求较高，不喜喧闹，爱钻研，关注热点技术方向。
+	      </p>
+	    </div>
+	  </div>
+	  <div className="card-part education">
 	    <h3>
 	      <i className="icon-education fa fa-university"></i>
 	      教育经历

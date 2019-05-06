@@ -51,7 +51,7 @@
 	font-size: 16px;
       }
     }
-    .education {
+    .card-part {
       h3 {
         padding-left: 15px;
 	border-left: 4px solid #08aeac;
@@ -66,6 +66,10 @@
 	  font-size: 20px;
 	  color: #08aeac;
 	  margin-right: 5px;
+	  &.icon-self-description {
+	    padding-left: 3px;
+	    padding-right: 4px;
+	  }
 	}
       }
       .education-box {
@@ -103,6 +107,16 @@
 	    .text {
 	    }
 	  }
+	}
+      }
+      .self-description-box {
+	padding-bottom: 20px;
+        p {
+	  line-height: 22px;
+	  font-size: 12px;
+	  text-align: justify;
+	  text-indent: 28px;
+	  padding-bottom: 10px;
 	}
       }
     }
