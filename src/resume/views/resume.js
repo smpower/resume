@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import store from '../../store/';
 
-import resumeFile from './王若非的简历_前端工程师.pdf';
 import './resume.scss';
 
 class Resume extends Component {
@@ -18,7 +17,7 @@ class Resume extends Component {
 	    <hr />
 	  </div>
 	  <div className="download-resume">
-	    <a href={resumeFile} alt="download resume">下载我的简历</a>
+	    <a href="/#" alt="download resume">下载我的简历</a>
 	  </div>
 	  <div className="card-part self-intro">
 	    <h3>
