@@ -25,8 +25,8 @@ const menu = [
     target: 'isSkillVisible'
   },
   {
-    text: 'portfolio',
-    translation: '简历',
+    text: 'project',
+    translation: '项目',
     isClicked: false,
     target: 'isPortfolioVisible'
   },
