@@ -4,7 +4,7 @@ import { view as Navigation } from './navigation/';
 import { view as Home } from './home/';
 import { view as Resume } from './resume/';
 import { view as Skill } from './skill/';
-import { view as Portfolio } from './portfolio/';
+import { view as Project } from './project/';
 import { view as Contact } from './contact/';
 import { view as Modal } from './modal/';
 
@@ -77,7 +77,7 @@ class App extends Component {
 	  <Navigation />
 	  <Resume />
 	  <Skill />
-	  <Portfolio />
+	  <Project />
 	  <Contact />
 	  <Home />
 	</div>

@@ -28,9 +28,7 @@ class Project extends Component {
 	      </div>
 	      <div className="item-inner">
 		<h5>
-		  <Link 
-		    to="/project/todo"
-		  >TODO 应用</Link>
+		  <a href="/#">TODO 应用</a>
 		</h5>
 		<hr />
 		<p>
