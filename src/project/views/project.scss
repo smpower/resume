@@ -77,7 +77,7 @@
 	  background: transparent;
 	  border-radius: 6px;
 	  transition: background .3s ease-out;
-	  h5 a {
+	  h5 button {
 	    font-size: 18px;
 	    font-style: italic;
 	    margin-bottom: 8px;
@@ -112,7 +112,7 @@
 	  }
 	  &:hover {
 	    background: rgba(0, 0, 0, .7);
-	    h5 a {
+	    h5 button {
 	      color: #fff;
 	      top: 0;
 	    }
@@ -127,6 +127,52 @@
 	  }
 	}
       }
+    }
+  }
+  .project-detail {
+    position: absolute;
+    top: 0;
+    left: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    background-color: #fff !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .3s ease-out;
+    &.active {
+      left: 0;
+      width: 100%;
+      opacity: 1;
+    }
+    .back {
+      position: absolute;
+      top: 18px;
+      left: 10px;
+      transition: color .3s ease-out;
+      span i {
+	color: #616161;
+	transition: color .3s ease-out;
+	&.fa-arrow-left {
+	  position: relative;
+	  bottom: 3px;
+	}
+      }
+      &:hover {
+        span i {
+	  color: #08aeac;
+	}
+      }
+    }
+    .title {
+      height: 60px;
+      line-height: 60px;
+      font-size: 18px;
+      font-weight: bold;
     }
   }
 }

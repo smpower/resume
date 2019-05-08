@@ -1,16 +1,26 @@
-import React, { Component, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import { Switch, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import store from '../../store/';
 import Todo from './projects/todo';
+import { actions as projectDetailActions } from '../../store/projectDetail/';
 
 import portfolioTodo from './images/portfolio_todo.png';
-
 import './project.scss';
 
 class Project extends Component {
+  constructor() {
+    super(...arguments);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(target) {
+    return function(event) {
+      store.dispatch(projectDetailActions.visible(target));
+    }
+  }
+
   render() {
-    const { card } = store.getState();
+    const { card  } = store.getState();
     const { cardBackground } = store.getState().style;
 
     return (
@@ -28,16 +38,17 @@ class Project extends Component {
 	      </div>
 	      <div className="item-inner">
 		<h5>
-		  <a href="/#">TODO 应用</a>
+		  <button onClick={this.handleClick('todo')}>TODO 应用</button>
 		</h5>
 		<hr />
 		<p>
-		  <a href="#">查看源代码</a>
+		  <a href="/#">查看源代码</a>
 		</p>
 	      </div>
 	    </div>
 	  </div>
 	</div>
+	<Todo cardBackground={cardBackground}/>
       </div>
     );
   }

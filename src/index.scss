@@ -27,11 +27,30 @@ a {
   text-decoration: none;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
 hr {
   width: 100%;
   border: none;
   height: 1px;
   background: linear-gradient(90deg, #dfdfdf, #999, #dfdfdf);
+}
+
+.markdown-body {
+  width: 100%;
+  .markdown-inner {
+    padding: 0 40px;
+    p, a {
+      text-align: justify;
+    }
+  }
 }
 
 .hidden {
