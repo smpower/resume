@@ -1,12 +1,19 @@
 import React from 'react';
+import store from '../../../store/';
+import { actions as projectDetailActions } from '../../../store/projectDetail/';
 import markdown from '../../../utilities/markdown';
 import markdownFile from './todo.md';
 
 const result = markdown.render(markdownFile);
 
-export default ({cardBackground}) => (
-  <div className="active project-detail" style={cardBackground}>
-    <button className="back" title="返回">
+export default ({cardBackground, projectDetail}) => (
+  <div
+    className={projectDetail.todo ? 'active project-detail' : 'project-detail'}
+    style={cardBackground}
+  >
+    <button className="back" title="返回" onClick={() => {
+      store.dispatch(projectDetailActions.unvisible('todo'));
+    }}>
       <span className="fa fa-stack">
 	<i className="fa fa-square-o fa-stack-2x"></i>
 	<i className="fa fa-arrow-left fa-stack-1x"></i>

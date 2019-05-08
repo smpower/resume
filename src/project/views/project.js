@@ -20,7 +20,7 @@ class Project extends Component {
   }
 
   render() {
-    const { card  } = store.getState();
+    const { card, projectDetail } = store.getState();
     const { cardBackground } = store.getState().style;
 
     return (
@@ -42,13 +42,20 @@ class Project extends Component {
 		</h5>
 		<hr />
 		<p>
-		  <a href="/#">查看源代码</a>
+		  <a
+		    href="https://github.com/smpower/todo_web/"
+		    target="_blank"
+		    rel="noopener noreferrer"
+		  >查看源代码</a>
 		</p>
 	      </div>
 	    </div>
 	  </div>
 	</div>
-	<Todo cardBackground={cardBackground}/>
+	<Todo 
+	  cardBackground={cardBackground}
+	  projectDetail={projectDetail}
+	/>
       </div>
     );
   }
