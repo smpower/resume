@@ -40,7 +40,6 @@ class Project extends Component {
     const { card, projectDetail, projectCollection } = store.getState();
     const { cardBackground } = store.getState().style;
     let isProjectDetailActived = false;
-    let projectDetailTitle = '';
 
     for (const key in projectDetail) {
       if (projectDetail[key]) isProjectDetailActived = true;
@@ -50,10 +49,6 @@ class Project extends Component {
       <div 
 	className={
 	  card.isPortfolioVisible ? "card portfolio active" : "card portfolio"
-	}
-	style={
-	  {}
-	  // isProjectDetailActived ? {overflowY: 'hidden'} : {overflowY : 'auto'}
 	}
       >
 	<span className="line"></span>
@@ -110,11 +105,13 @@ class Project extends Component {
 	  <h4 className="title">
 	    {
 	      projectCollection.map((item, index) => {
+		let name = '';
 		for (const key in projectDetail) {
 		  if (key === item.project && projectDetail[key]) {
-		    return item.name; 
+		    name = item.name;
 		  }
 		}
+		return name;
 	      })
 	    }
 	  </h4>
