@@ -1,5 +1,6 @@
 import projectTodoImage from './images/project_todo.png';
 import projectJzUmsImage from './images/project_jzums.png';
+import projectXyUcmsImage from './images/project_xyucms.png';
 
 const projectCollectionState = [
   { 
@@ -16,6 +17,13 @@ const projectCollectionState = [
     isActived: false,
     isSourceContained: false,
     backgroundImage: projectJzUmsImage
+  },
+  {
+    project: 'xyucms',
+    name: '小鱼情感用户留言管理系统',
+    isActived: false,
+    isSourceContained: false,
+    backgroundImage: projectXyUcmsImage
   }
 ];
 
