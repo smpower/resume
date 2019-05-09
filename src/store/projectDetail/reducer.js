@@ -2,7 +2,7 @@ import { SET_PROJECTDETAIL_VISIBLE, SET_PROJECTDETAIL_UNVISIBLE } from './action
 
 const projectDetail = {
   todo: false,
-  ums: false
+  jzums: false
 };
 
 export default (state = projectDetail, action) => {
