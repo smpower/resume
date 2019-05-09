@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import store from '../../store/';
-// import Todo from './projects/todo';
 import { actions as projectDetailActions } from '../../store/projectDetail/';
 import { Boundle } from '../../utilities/';
 

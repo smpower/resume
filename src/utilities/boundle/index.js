@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { view as LoadAnimation } from '../../loadAnimation/';
 
 export default class Boundle extends Component {
