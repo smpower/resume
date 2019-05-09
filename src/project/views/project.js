@@ -3,7 +3,8 @@ import store from '../../store/';
 import { actions as projectDetailActions } from '../../store/projectDetail/';
 import { Boundle } from '../../utilities/';
 
-import portfolioTodo from './images/portfolio_todo.png';
+import projectTodo from './images/project_todo.png';
+import projectJzUms from './images/project_jzums.png';
 import './project.scss';
 
 const Todo = props => (
@@ -32,18 +33,24 @@ class Project extends Component {
   }
 
   render() {
-    const { card, projectDetail } = store.getState();
+    const { card, projectDetail, projectCollection } = store.getState();
     const { cardBackground } = store.getState().style;
     let isProjectDetailActived = false;
+    let projectDetailTitle = '';
 
     for (const key in projectDetail) {
-      if (projectDetail[key]) {
-	isProjectDetailActived = true;
-      }
+      if (projectDetail[key]) isProjectDetailActived = true;
     }
 
     return (
-      <div className={card.isPortfolioVisible ? "card portfolio active" : "card portfolio"}>
+      <div 
+	className={
+	  card.isPortfolioVisible ? "card portfolio active" : "card portfolio"
+	}
+	style={
+	  isProjectDetailActived ? {overflowY: 'hidden'} : {overflowY : 'auto'}
+	}
+      >
 	<span className="line"></span>
 	<div className="content" style={cardBackground}>
 	  <div className="header">
@@ -51,42 +58,32 @@ class Project extends Component {
 	    <hr />
 	  </div>
 	  <div className="card-part portfolio-collection">
-	    <div className="portfolio-item">
-	      <div className="item-image">
-		<img src={portfolioTodo} alt="TODO 应用" />
-	      </div>
-	      <div className="item-inner">
-		<h5>
-		  <button onClick={this.handleClick('todo')}>TODO 应用</button>
-		</h5>
-		<hr />
-		<p>
-		  <a
-		    href="https://github.com/smpower/todo_web/"
-		    target="_blank"
-		    rel="noopener noreferrer"
-		  >查看源代码</a>
-		</p>
-	      </div>
-	    </div>
-	    <div className="portfolio-item">
-	      <div className="item-image">
-		<img src={portfolioTodo} alt="TODO 应用" />
-	      </div>
-	      <div className="item-inner">
-		<h5>
-		  <button onClick={this.handleClick('jzums')}>TODO 应用 2</button>
-		</h5>
-		<hr />
-		<p>
-		  <a
-		    href="https://github.com/smpower/todo_web/"
-		    target="_blank"
-		    rel="noopener noreferrer"
-		  >查看源代码</a>
-		</p>
-	      </div>
-	    </div>
+	    {
+	      projectCollection.map((item, index) => (
+		<div className="portfolio-item" key={index}>
+		  <div className="item-image">
+		    <img src={item.backgroundImage} alt={item.name} />
+		  </div>
+		  <div className="item-inner">
+		    <h5>
+		      <button onClick={this.handleClick(item.project)}>{item.name}</button>
+		    </h5>
+		    <hr />
+		    {
+		      item.isSourceContained ? (
+			<p>
+			  <a
+			    href={item.source}
+			    target="_blank"
+			    rel="noopener noreferrer"
+			  >查看源代码</a>
+			</p>
+		      ) : null
+		    }
+		  </div>
+		</div>
+	      ))
+	    }
 	  </div>
 	</div>
         <div
@@ -105,7 +102,17 @@ class Project extends Component {
              <i className="fa fa-arrow-left fa-stack-1x"></i>
             </span>
           </button>
-          <h4 className="title">TODO 应用</h4>
+	  <h4 className="title">
+	    {
+	      projectCollection.map((item, index) => {
+		for (const key in projectDetail) {
+		  if (key === item.project && projectDetail[key]) {
+		    return item.name; 
+		  }
+		}
+	      })
+	    }
+	  </h4>
 	  {
 	    projectDetail.todo ? <Todo /> : null
 	  }
