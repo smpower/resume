@@ -10,6 +10,7 @@
   &.active {
     left: 477px;
     opacity: 1;
+    overflow-y: hidden !important;
   }
   .line {
     display: inline-block;
@@ -38,13 +39,23 @@
       }
     }
     .portfolio-collection {
+      height: 410px;
+      overflow-y: auto;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding-top: 30px;
+      margin-top: 25px;
+      padding-top: 5px;
+      &::-webkit-scrollbar {  
+	width: 5px;  // 滚动条宽度
+      }  
+      &::-webkit-scrollbar-track {  
+	margin-bottom: 15px;
+	background-color: transparent;
+      }  
       .portfolio-item {
-        width: 90%;
+        width: 85%;
 	height: 150px;
 	padding: 5%;
 	background: #fff;
@@ -143,7 +154,7 @@
     background-color: #fff !important;
     overflow-y: auto;
     overflow-x: hidden;
-    transition: all .3s ease-out;
+    transition: left .3s ease-out, width .3s ease-out, opacity .3s ease-out;
     &.active {
       left: 0;
       width: 100%;

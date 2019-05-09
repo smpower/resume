@@ -17,6 +17,12 @@ const JzUms = props => (
   </Boundle>
 );
 
+const XyUcms = props => (
+  <Boundle load={() => import('./projects/xyucms.js')}>
+    {XyUcms => <XyUcms {...props} />}
+  </Boundle>
+);
+
 class Project extends Component {
   constructor() {
     super(...arguments);
@@ -46,7 +52,8 @@ class Project extends Component {
 	  card.isPortfolioVisible ? "card portfolio active" : "card portfolio"
 	}
 	style={
-	  isProjectDetailActived ? {overflowY: 'hidden'} : {overflowY : 'auto'}
+	  {}
+	  // isProjectDetailActived ? {overflowY: 'hidden'} : {overflowY : 'auto'}
 	}
       >
 	<span className="line"></span>
@@ -116,6 +123,9 @@ class Project extends Component {
 	  }
 	  {
 	    projectDetail.jzums ? <JzUms /> : null
+	  }
+	  {
+	    projectDetail.xyucms ? <XyUcms /> : null
 	  }
         </div>
       </div>
