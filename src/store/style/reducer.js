@@ -18,8 +18,5 @@ const styleState = {
 };
 
 export default (state = styleState, action) => {
-  switch(action.type) {
-    default:
-      return state;
-  }
+  return state;
 };
