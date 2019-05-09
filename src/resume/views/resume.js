@@ -10,7 +10,6 @@ class Resume extends Component {
 
     return (
       <div className={card.isResumeVisible ? "card resume active" : "resume"}>
-	<span className="line"></span>
 	<div className="content" style={cardBackground}>
 	  <div className="header">
 	    <h2>简历 RESUME</h2>

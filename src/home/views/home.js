@@ -49,7 +49,6 @@ class Home extends Component {
 
     return (
       <div className="home">
-	<span className="line"></span>
 	<div className="content" style={cardBackground}>
 	  <div className="avatar">
 	    <img src={avatar} alt="avatar" />

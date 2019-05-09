@@ -10,7 +10,6 @@ class Skill extends Component {
 
     return (
       <div className={card.isSkillVisible ? "card skill active" : "card skill"}>
-	<span className="line"></span>
 	<div className="content" style={cardBackground}>
 	  <div className="header">
 	    <h2>技能 SKILL</h2>

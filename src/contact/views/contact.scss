@@ -26,6 +26,17 @@
     position: relative;
     overflow: hidden;
     height: 100%;
+    .header {
+      h2 {
+        font-size: 22px;
+	font-weight: bold;
+	color: #021533;
+	padding-bottom: 15px;
+      }
+      hr {
+	height: 1px;
+      }
+    }
   }
 }
 

@@ -3,8 +3,6 @@ import store from '../../store/';
 import { actions as projectDetailActions } from '../../store/projectDetail/';
 import { Boundle } from '../../utilities/';
 
-import projectTodo from './images/project_todo.png';
-import projectJzUms from './images/project_jzums.png';
 import './project.scss';
 
 const Todo = props => (
