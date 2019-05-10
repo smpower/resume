@@ -60,7 +60,12 @@ class Home extends Component {
 	    <p>编码如生活，要在跌倒的 bug 那里站起来！</p>
 	  </div>
 	  <div className="contact-box">
-	    <span style={cardBackground2}>Email: rf.wangchn@gmail.com / Phone: 153 1872 4236</span>
+	    <span style={cardBackground2}>Email:
+	      <a href={`mailto:${mailTo.to}?subject=${mailTo.subject}`}
+		rel="noopener noreferrer">
+		rf.wangchn@gmail.com
+	      </a> / Phone: 153 1872 4236
+	    </span>
 	  </div>
 	  <div className="social-icons">
 	    <a href="https://github.com/smpower/" target="_blank"  rel="noopener noreferrer">
