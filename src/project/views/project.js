@@ -5,21 +5,73 @@ import { Boundle } from '../../utilities/';
 
 import './project.scss';
 
+// Todo 应用
 const Todo = props => (
   <Boundle load={() => import('./projects/todo.js')}>
     {Todo => <Todo {...props} />}
   </Boundle>
 );
 
+// 以萨技术融合系统
+const YsFusion = props => (
+  <Boundle load={ () => import('./projects/ysfusion.js') }>
+    { YsFusion => <YsFusion {...props} /> }
+  </Boundle>
+);
+
+// 以萨技术人脸识别系统
+const YsFace = props => (
+  <Boundle load={ () => import('./projects/ysface.js') }>
+    { YsFace => <YsFace {...props} /> }
+  </Boundle>
+);
+
+// 以萨技术案件库系统
+const YsCase = props => (
+  <Boundle load={ () =>  import('./projects/yscase.js') }>
+    { YsCase => <YsCase {...props} /> }
+  </Boundle>
+);
+
+// 橘子情感员工管理系统
 const JzUms = props => (
-  <Boundle load={() => import('./projects/jzums.js')}>
+  <Boundle load={ () => import('./projects/jzums.js') }>
     {JzUms => <JzUms {...props} />}
   </Boundle>
 );
 
+// 小鱼情感用户留言管理系统
 const XyUcms = props => (
-  <Boundle load={() => import('./projects/xyucms.js')}>
+  <Boundle load={ () => import('./projects/xyucms.js') }>
     {XyUcms => <XyUcms {...props} />}
+  </Boundle>
+);
+
+// 小鱼情感 PC 端门户网站
+const XyPc = props => (
+  <Boundle load={ () => import('./projects/xypc.js') }>
+    { XyPc => <XyPc {...props} /> }
+  </Boundle>
+);
+
+// 小鱼情感移动端门户网站
+const XyMobile = props => (
+  <Boundle load={ () => import('./projects/xymobile.js') }>
+    { XyMobile => <XyMobile {...props} /> }
+  </Boundle>
+);
+
+// 橘子情感移动端门户网站
+const JzMobile = props => (
+  <Boundle load={ () => import('./projects/jzmobile.js') }>
+    { JzMobile => <JzMobile {...props} /> }
+  </Boundle>
+);
+
+// 橘子情感 PC 端门户网站
+const JzPc = props => (
+  <Boundle load={ () => import('./projects/jzpc.js') }>
+    { JzPc => <JzPc {...props} /> }
   </Boundle>
 );
 
@@ -119,10 +171,31 @@ class Project extends Component {
 	    projectDetail.todo ? <Todo /> : null
 	  }
 	  {
+	    projectDetail.ysfusion ? <YsFusion /> : null
+	  }
+	  {
+	    projectDetail.ysface ? <YsFace /> : null
+	  }
+	  {
+	    projectDetail.yscase ? <YsCase /> : null
+	  }
+	  {
 	    projectDetail.jzums ? <JzUms /> : null
 	  }
 	  {
 	    projectDetail.xyucms ? <XyUcms /> : null
+	  }
+	  {
+	    projectDetail.xypc ? <XyPc /> : null
+	  }
+	  {
+	    projectDetail.xymobile ? <XyMobile /> : null
+	  }
+	  {
+	    projectDetail.jzmobile ? <JzMobile /> : null
+	  }
+	  {
+	    projectDetail.jzpc ? <JzPc /> : null
 	  }
         </div>
       </div>
