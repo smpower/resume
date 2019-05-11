@@ -140,5 +140,6 @@
   "devDependencies": {
     "redux-devtools-extension": "^2.13.8",
     "standard": "^12.0.1"
-  }
+  },
+  "homepage": "."
 }
