@@ -26,13 +26,6 @@ const YsFace = props => (
   </Boundle>
 );
 
-// 以萨技术案件库系统
-const YsCase = props => (
-  <Boundle load={ () =>  import('./projects/yscase.js') }>
-    { YsCase => <YsCase {...props} /> }
-  </Boundle>
-);
-
 // 橘子情感员工管理系统
 const JzUms = props => (
   <Boundle load={ () => import('./projects/jzums.js') }>
@@ -175,9 +168,6 @@ class Project extends Component {
 	  }
 	  {
 	    projectDetail.ysface ? <YsFace /> : null
-	  }
-	  {
-	    projectDetail.yscase ? <YsCase /> : null
 	  }
 	  {
 	    projectDetail.jzums ? <JzUms /> : null

@@ -1,7 +1,6 @@
 import projectTodoImage from './images/project_todo.png';
 import projectYsFusionImage from './images/project_ysfusion.png';
 import projectYsFaceImage from './images/project_ysface.png';
-import projectYsCaseImage from './images/project_yscase.png';
 import projectJzUmsImage from './images/project_jzums.png';
 import projectXyUcmsImage from './images/project_xyucms.png';
 import projectXyPcImage from './images/project_xypc.png';
@@ -31,13 +30,6 @@ const projectCollectionState = [
     isActived: false,
     isSourceContained: false,
     backgroundImage: projectYsFaceImage
-  },
-  {
-    project: 'yscase',
-    name: '以萨技术案件库系统',
-    isActived: false,
-    isSourceContained: false,
-    backgroundImage: projectYsCaseImage
   },
   {
     project: 'jzums',
