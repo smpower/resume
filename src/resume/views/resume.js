@@ -20,6 +20,8 @@ const workExperences = [
   }
 ];
 
+const resumeDownloadUrl = 'https://raw.githubusercontent.com/smpower/resume/master/docs/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88_%E7%8E%8B%E8%8B%A5%E9%9D%9E%E7%9A%84%E7%AE%80%E5%8E%86.pdf';
+
 class Resume extends Component {
   render() {
     const { card } = store.getState();
@@ -33,7 +35,7 @@ class Resume extends Component {
 	    <hr />
 	  </div>
 	  <div className="download-resume">
-	    <a href="/#" alt="download resume">下载我的简历</a>
+	    <a href={resumeDownloadUrl} alt="download resume">下载我的简历</a>
 	  </div>
 	  <div className="card-part self-intro">
 	    <h3>
