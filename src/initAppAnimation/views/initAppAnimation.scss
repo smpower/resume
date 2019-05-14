@@ -1,0 +1,234 @@
+.initApp {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .cube-container {
+    // 透明度
+    @keyframes opacity {
+      from {
+	opacity: 0;
+      }
+      to {
+	opacity: 1;
+      }
+    }
+    opacity: 0;
+    perspective: 1000px;
+    animation: opacity 2s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+    .cube {
+      height: 100px;
+      width: 100px;
+      position: relative;
+      top: -100px;
+      transform-style: preserve-3d;  // 定义3d转换
+      animation: rotate 2s ease-in-out 0s infinite;
+      animation-play-state: paused;
+      transform: rotateX(-45deg) rotateY(45deg);
+      @keyframes frontTranslateIncrement {
+	from {
+	  transform: translateZ(60px);
+	}
+	to {
+	  transform: translateZ(120px);
+	}
+      }
+      @keyframes backTranslateDecrement {
+	from {
+	  transform: translateZ(-60px);
+	}
+	to {
+	  transform: translateZ(-120px);
+	}
+      }
+      @keyframes topTranslateIncrement {
+	from {
+	  transform: rotateX(90deg) rotateY(360deg) translateZ(60px);
+	}
+	to {
+	  transform: rotateX(90deg) rotateY(360deg) translateZ(120px);
+	}
+      }
+      @keyframes rightTranslateIncrement {
+	from {
+	  transform: rotateX(0deg) rotateY(90deg) translateZ(60px);
+	}
+	to {
+	  transform: rotateX(0deg) rotateY(90deg) translateZ(120px);
+	}
+      }
+      @keyframes bottomTranslateIncrement {
+	from {
+	  transform: rotateX(-90deg) rotateY(0deg) translateZ(60px);
+	}
+	to {
+	  transform: rotateX(-90deg) rotateY(0deg) translateZ(120px);
+	}
+      }
+      @keyframes leftTranslateIncrement {
+	from {
+	  transform: rotateX(0deg) rotateY(-90deg) translateZ(60px);
+	}
+	to {
+	  transform: rotateX(0deg) rotateY(-90deg) translateZ(120px);
+	}
+      }
+      // 旋转
+      @keyframes rotate {
+	from {
+	  transform: rotateX(-45deg) rotateY(45deg);
+	}
+	to {
+	  transform: rotateX(-45deg) rotateY(405deg);
+	}
+      }
+      div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 100px;
+	text-align: center;
+	font-size: 38px;
+	background: #08aeac;
+      }
+      &.animation-active {
+	animation-play-state: running;
+      }
+      .front {
+	transform: translateZ(60px);
+	opacity: .7;
+	&.animation-active {
+	  animation: frontTranslateIncrement .5s ease-in-out 0s infinite alternate;
+	}
+      }
+      .back {
+	transform: translateZ(-60px);
+	opacity: .7;
+	&.animation-active {
+	  animation: backTranslateDecrement .5s ease-in-out 0s infinite alternate;
+	}
+      }
+      .top {
+	transform: rotateX(90deg) rotateY(360deg) translateZ(100px);
+	opacity: .7;
+	font-size: 38px;
+	&.animation-active {
+	  animation: topTranslateIncrement .5s ease-in-out 0s infinite alternate;
+	}
+      }
+      .right {
+	transform: rotateX(0deg) rotateY(90deg) translateZ(60px);
+	opacity: .7;
+	font-size: 36px;
+	color: #fff;
+	&.animation-active {
+	  animation: rightTranslateIncrement .5s ease-in-out 0s infinite alternate;
+	}
+      }
+      .bottom {
+	transform: rotateX(-90deg) rotateY(0deg) translateZ(60px);
+	opacity: .7;
+	font-size: 36px;
+	&.animation-active {
+	  animation: bottomTranslateIncrement .5s ease-in-out 0s infinite alternate;
+	}
+      }
+      .left {
+	transform: rotateX(0deg) rotateY(-90deg) translateZ(60px);
+	opacity: .7;
+	font-size: 36px;
+	&.animation-active {
+	  animation: leftTranslateIncrement .5s ease-in-out 0s infinite alternate;
+	}
+      }
+    }
+    .circle {
+      // 旋转
+      position: relative;
+      transform-style: preserve-3d;  // 定义3d转换
+      animation: rotate 2s ease-in-out 0s infinite;
+      animation-play-state: paused;
+      border-radius: 50%;
+      background: transparent !important;
+      .surface {
+	transform: translateZ(0deg);
+	background: transparent !important;
+	opacity: .7;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	@keyframes borderColor {
+	  from {
+	    border-color: lightgreen;
+	  }
+	  to {
+	    border-color: blue;
+	  }
+	}
+	&:nth-child(1) {
+	  transform: rotateX(-45deg) rotateY(45deg);
+	  animation: borderColor 15s ease-in-out 0s infinite alternate;
+	}
+	&:nth-child(2) {
+	  transform: rotateX(0deg) rotateY(90deg);
+	  animation: borderColor 5s ease-in-out .5s infinite alternate;
+	}
+	&:nth-child(3) {
+	  transform: rotateX(45deg) rotateY(135deg);
+	  animation: borderColor 10s ease-in-out 1s infinite alternate;
+	}
+	&:nth-child(4) {
+	  transform: rotateX(90deg) rotateY(180deg);
+	  animation: borderColor 10s ease-in-out 1.5s infinite alternate;
+	}
+	&:nth-child(5) {
+	  transform: rotateX(135deg) rotateY(225deg);
+	  animation: borderColor 15s ease-in-out 2s infinite alternate;
+	}
+	&:nth-child(5) {
+	  transform: rotateX(180deg) rotateY(270deg);
+	  animation: borderColor 5s ease-in-out 0s infinite alternate;
+	}
+	&:nth-child(6) {
+	  transform: rotateX(225deg) rotateY(315deg);
+	  animation: borderColor 10s ease-in-out .5s infinite alternate;
+	}
+	&:nth-child(7) {
+	  transform: rotateX(270deg) rotateY(360deg);
+	  animation: borderColor 5s ease-in-out 1s infinite alternate;
+	}
+	&:nth-child(8) {
+	  transform: rotateX(315deg) rotateY(0deg);
+	  animation: borderColor 20s ease-in-out 1.5s infinite alternate;
+	}
+	&:nth-child(9) {
+	  transform: rotateX(360deg) rotateY(-45deg);
+	  animation: borderColor 15s ease-in-out 2s infinite alternate;
+	}
+      }
+    }
+  }
+  p {
+    @keyframes textColor {
+      from {
+        color: #fff;
+      }
+      to {
+        color: #616161;
+      }
+    }
+    color: #fff;
+    position: relative;
+    bottom: -20px;
+    letter-spacing: 1px;
+    animation: textColor 1s ease-out 0s 1;
+    animation-fill-mode: forwards;
+  }
+}

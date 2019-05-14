@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { view as LoadAnimation } from '../../loadAnimation/';
+import { view as InitAppAnimation } from '../../initAppAnimation/';
 
 export default class Boundle extends Component {
   constructor() {
@@ -31,7 +32,11 @@ export default class Boundle extends Component {
   }
 
   render() {
-    return this.state.mod ? this.props.children(this.state.mod) : this.props.children(LoadAnimation)
+    if (this.props.initApp) {
+      return this.state.mod ? this.props.children(this.state.mod) : this.props.children(InitAppAnimation)
+    } else {
+      return this.state.mod ? this.props.children(this.state.mod) : this.props.children(LoadAnimation)
+    }
   }
 }
 
