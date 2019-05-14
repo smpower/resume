@@ -52,7 +52,7 @@ class Home extends Component {
 	    <img src={avatar} alt="avatar" />
 	  </div>
 	  <div className="userinfo text-center">
-	    <h3>王若非</h3>
+	    <h3>王先生</h3>
 	    <h4>前端工程师</h4>
 	  </div>
 	  <hr />
